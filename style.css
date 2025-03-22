@@ -1,82 +1,154 @@
+/* Root Variables for Dynamic Styling */
+:root {
+    --primary-bg: #f4e4ba;
+    --container-bg: #fff;
+    --button-bg: #af4d98;
+    --button-hover-bg: #8a3b75;
+    --text-color: #333;
+    --border-color: lightgray;
+    --font-size-base: 1rem;
+}
+
+/* Reset Default Margins & Padding */
 * {
     margin: 0;
     padding: 0;
-  }
-  
-  body {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Center Everything */
+body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f4e4ba;
-  }
-  
-  .container {
-    background-color: #fff;
+    background-color: var(--primary-bg);
+    transition: background 0.3s ease-in-out;
+}
+
+/* Main Container */
+.container {
+    background-color: var(--container-bg);
     padding: 2rem;
     border-radius: 1rem;
     min-height: 45vh;
     width: 40vh;
-  }
-  
-  form {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Form */
+form {
     margin: 2rem 0 1rem 0;
-  }
-  
-  form select,
-  button,
-  input {
+}
+
+/* Inputs, Select, and Button */
+form select,
+form button,
+form input {
     width: 100%;
     border: none;
     outline: none;
     border-radius: 0.75rem;
-  }
-  
-  form input {
-    border: 1px solid lightgray;
-    font-size: 1rem;
+    font-size: var(--font-size-base);
+}
+
+/* Input Fields */
+form input {
+    border: 1px solid var(--border-color);
     height: 3rem;
     padding-left: 0.5rem;
-  }
-  
-  .dropdown {
+    transition: border 0.3s ease-in-out;
+}
+
+/* Input Focus Effect */
+form input:focus {
+    border: 1px solid var(--button-bg);
+}
+
+/* Dropdown Section */
+.dropdown {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 2rem;
-  }
-  
-  .dropdown i {
+}
+
+/* Dropdown Icon */
+.dropdown i {
     font-size: 1.5rem;
     margin-top: 1rem;
-  }
-  
-  .select-container img {
-    max-width: 2rem;
-  }
-  
-  .select-container {
+    color: var(--button-bg);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Animation on Swap Icon */
+.dropdown i:hover {
+    transform: rotate(180deg);
+}
+
+/* Currency Flag & Dropdown */
+.select-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 6rem;
     border-radius: 0.5rem;
-    border: 1px solid lightgray;
-  }
-  
-  .select-container select {
-    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    transition: border 0.3s ease-in-out;
+}
+
+/* Currency Select */
+.select-container select {
+    font-size: var(--font-size-base);
     width: auto;
-  }
-  
-  .msg {
+    background: transparent;
+    cursor: pointer;
+}
+
+/* Currency Flags */
+.select-container img {
+    max-width: 2rem;
+}
+
+/* Message Styling */
+.msg {
     margin: 2rem 0 2rem 0;
-  }
-  
-  form button {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* Button Styling */
+form button {
     height: 3rem;
-    background-color: #af4d98;
-    color: #fff;
+    background-color: var(--button-bg);
+    color: white;
     font-size: 1.15rem;
     cursor: pointer;
-  }
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+/* Button Hover Effect */
+form button:hover {
+    background-color: var(--button-hover-bg);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--border-color);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
